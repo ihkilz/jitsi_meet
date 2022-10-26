@@ -3,7 +3,7 @@
 #### Support us using our patreon account. https://www.ihkil.com
 
 
-Jitsi Meet Plugin for Flutter. Supports Android, iOS, and Web platforms.
+Jitsi Meet Plugin for Flutter. Supports Android and iOS.
 
 "Jitsi Meet is an open-source (Apache) WebRTC JavaScript application that uses Jitsi Videobridge to provide high quality, secure and scalable video conferences." 
 
@@ -17,9 +17,9 @@ Find more information about Jitsi Meet [here](https://github.com/jitsi/jitsi-mee
     - [Android](#android)
       - [Gradle](#gradle)
       - [AndroidManifest.xml](#androidmanifestxml)
+      - [Icon Notification](#icon-notification)
       - [Minimum SDK Version 23](#minimum-sdk-version-23)
       - [Proguard](#proguard)
-    - [WEB](#web)
   - [Join A Meeting](#join-a-meeting)
     - [JitsiMeetingOptions](#jitsimeetingoptions)
     - [FeatureFlag](#featureflag)
@@ -58,6 +58,8 @@ Add NSCameraUsageDescription and NSMicrophoneUsageDescription to your
 Info.plist.
 
 ```text
+<key>NSCalendarsUsageDescription</key>
+<string>$(PRODUCT_NAME) require calendar permission.</string>
 <key>NSCameraUsageDescription</key>
 <string>$(PRODUCT_NAME) MyApp needs access to your camera for meetings.</string>
 <key>NSMicrophoneUsageDescription</key>
@@ -105,6 +107,11 @@ and `tools:replace="android:label"` to the application tag.
 ...
 </manifest>
 ```
+
+#### Icon Notification
+Jitsi Meet's SDK Required icon Notification
+`Icon name: ic_notification.png`
+
 
 #### Minimum SDK Version 23
 Update your minimum sdk version to 23 in android/app/build.gradle
@@ -164,35 +171,6 @@ W/unknown:ViewManagerPropertyUpdater: Could not find generated setter for class 
 W/unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.art.a
 .....
 ```
-
-<a name="web"></a>
-### WEB
-
-To implement you need to include Jitsi Js library in the index.html of web section
-```javascript
-<script src="https://meet.jit.si/external_api.js" type="application/javascript"></script>
-```
-
-Example:
-```html
-<body>
-  <!-- This script installs service_worker.js to provide PWA functionality to
-       application. For more information, see:
-       https://developers.google.com/web/fundamentals/primers/service-workers -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/flutter_service_worker.js');
-      });
-    }
-  </script>
-  <script src="https://meet.jit.si/external_api.js" type="application/javascript"></script>
-  <script src="main.dart.js" type="application/javascript"></script>
-</body>
-</html>
-```
-*Note*
-See usage example in jitsi_meet plugin
 
 <a name="join-a-meeting"></a>
 

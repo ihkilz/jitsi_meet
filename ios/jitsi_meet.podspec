@@ -4,12 +4,12 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'jitsi_meet'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'Jitsi Meet Plugin'
   s.description      = <<-DESC
 Jitsi Meet Plugin
                        DESC
-  s.homepage         = 'http://example.com'
+  s.homepage         = 'https://github.com/ihkilz/'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }

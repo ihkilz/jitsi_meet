@@ -1,5 +1,5 @@
 group 'com.ihkil.jitsi_meet'
-version '1.0.0'
+version '1.1.0'
 
 buildscript {
     ext.kotlin_version = '1.6.10'
@@ -51,6 +51,5 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // Jitsi Meet from https://github.com/jitsi/jitsi-maven-repository/tree/master/releases/org/jitsi/react/jitsi-meet-sdk
-    implementation ('org.jitsi.react:jitsi-meet-sdk:3.9.1') { transitive = true }
-    // implementation ('org.jitsi.react:jitsi-meet-sdk:6.2.2') { transitive = true }
+    implementation ('org.jitsi.react:jitsi-meet-sdk:6.2.2') { transitive = true }
 }

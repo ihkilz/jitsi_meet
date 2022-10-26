@@ -139,7 +139,7 @@ public class JitsiMeetPlugin() : FlutterPlugin, MethodCallHandler, ActivityAware
                 .setFeatureFlag("invite.enabled", false)
                 .setFeatureFlag("help.enabled", false)
                 .setFeatureFlag("prejoinpage.enabled", false)
-                .setFeatureFlag("overflow-menu.enabled", false)
+                .setFeatureFlag("overflow-menu.enabled", true) //display menu
 
         // Add feature flags into options, reading given Map
         if (call.argument<HashMap<String, Any>?>("featureFlags") != null) {

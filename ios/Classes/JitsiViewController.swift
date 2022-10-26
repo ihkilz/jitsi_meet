@@ -69,6 +69,7 @@ class JitsiViewController: UIViewController {
             builder.userInfo = self.jistiMeetUserInfo
             builder.token = self.token
 
+            builder.setSubject(self.subject ?? "room")
             builder.setAudioOnly(self.audioOnly ?? false)
             builder.setAudioMuted(self.audioMuted ?? false)
             builder.setVideoMuted(self.videoMuted ?? false)
@@ -77,7 +78,7 @@ class JitsiViewController: UIViewController {
             builder.setFeatureFlag("invite.enabled", withValue: false)
             builder.setFeatureFlag("help.enabled", withValue: false)
             builder.setFeatureFlag("prejoinpage.enabled", withValue: false)
-            builder.setFeatureFlag("overflow-menu.enabled", withValue: false) //display menu
+            builder.setFeatureFlag("overflow-menu.enabled", withValue: true) //display menu
             
             self.featureFlags?.forEach{ key,value in
                 builder.setFeatureFlag(key, withValue: value);
