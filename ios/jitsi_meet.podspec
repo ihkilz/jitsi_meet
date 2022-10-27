@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'jitsi_meet'
-  s.version          = '1.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'Jitsi Meet Plugin'
   s.description      = <<-DESC
 Jitsi Meet Plugin

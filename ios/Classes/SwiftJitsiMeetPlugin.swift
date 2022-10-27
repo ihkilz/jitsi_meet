@@ -51,12 +51,15 @@ public class SwiftJitsiMeetPlugin: NSObject, FlutterPlugin, FlutterStreamHandler
                         //                        print("serverUrl: ", serverURL);
                         self.jitsiViewController?.serverUrl = URL(string: serverURL);
                     }
+                    let id = myArgs["id"] as? String
+                    let handle = myArgs["handle"] as? String
                     let subject = myArgs["subject"] as? String
                     let displayName = myArgs["userDisplayName"] as? String
                     let email = myArgs["userEmail"] as? String
                     let token = myArgs["token"] as? String
-
-
+                    
+                    self.jitsiViewController?.id = id;
+                    self.jitsiViewController?.handle = handle;
                     self.jitsiViewController?.roomName = roomName;
                     self.jitsiViewController?.subject = subject;
                     self.jitsiViewController?.jistiMeetUserInfo.displayName = displayName;

@@ -72,20 +72,20 @@ class JitsiMeetPluginActivity : JitsiMeetActivity() {
     }
 
     override fun onConferenceWillJoin(data: HashMap<String, Any>) {
-        Log.d(JITSI_PLUGIN_TAG, String.format("JitsiMeetPluginActivity.onConferenceWillJoin: %s", data))
+        // Log.d(JITSI_PLUGIN_TAG, String.format("JitsiMeetPluginActivity.onConferenceWillJoin: %s", data))
         JitsiMeetEventStreamHandler.instance.onConferenceWillJoin(data)
         super.onConferenceWillJoin(data)
     }
 
     override fun onConferenceJoined(data: HashMap<String, Any>) {
-        Log.d(JITSI_PLUGIN_TAG, String.format("JitsiMeetPluginActivity.onConferenceJoined: %s", data))
+        // Log.d(JITSI_PLUGIN_TAG, String.format("JitsiMeetPluginActivity.onConferenceJoined: %s", data))
         JitsiMeetEventStreamHandler.instance.onConferenceJoined(data)
         super.onConferenceJoined(data)
     }
 
     override fun onConferenceTerminated(data: HashMap<String, Any>) {
 
-        Log.d(JITSI_PLUGIN_TAG, String.format("JitsiMeetPluginActivity.onConferenceTerminated: %s", data))
+        // Log.d(JITSI_PLUGIN_TAG, String.format("JitsiMeetPluginActivity.onConferenceTerminated: %s", data))
         JitsiMeetEventStreamHandler.instance.onConferenceTerminated(data)
         super.onConferenceTerminated(data)
     }

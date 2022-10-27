@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:jitsi_meet/jitsi_meet.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:uuid/uuid.dart';
 
 class HomePage extends StatefulWidget {
   //
@@ -16,11 +17,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   //
   final _form = GlobalKey<FormState>();
-  final _room = TextEditingController(text: "");
+  final _room = TextEditingController(text: "demo");
 
   String userName = "Demo";
-  String host = "https://telemed2.abbot.tech";
-  // String room = "ihkil";
+  String host = "https://meet.jit.si";
   String error = "";
 
   bool isInConference = false;
@@ -135,10 +135,12 @@ class _HomePageState extends State<HomePage> {
           featureFlags[FeatureFlagEnum.PIP_ENABLED] = false;
         }
       }
+      String id = const Uuid().v4();
       String room = _room.text;
-      var options = JitsiMeetingOptions(room: room)
+      var options = JitsiMeetingOptions(id: id, room: room)
+        ..handle = "example"
         ..serverURL = host
-        ..subject = "room"
+        ..subject = "example"
         ..userDisplayName = userName
         ..userEmail = "$userName@demo.com"
         ..iosAppBarRGBAColor = "#0F955D"

@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'room_name_constraint.dart';
 import 'room_name_constraint_type.dart';
 
-import 'package:jitsi_meet_platform_interface/jitsi_meet_platform_interface.dart';
+import 'interface/jitsi_meet_platform_interface.dart';
 
-export 'package:jitsi_meet_platform_interface/jitsi_meet_platform_interface.dart'
+export 'interface/jitsi_meet_platform_interface.dart'
     show
         JitsiMeetingOptions,
         JitsiMeetingResponse,
@@ -19,14 +19,12 @@ export 'package:jitsi_meet_platform_interface/jitsi_meet_platform_interface.dart
 class JitsiMeet {
   static bool _hasInitialized = false;
 
-  static final Map<RoomNameConstraintType, RoomNameConstraint>
-      defaultRoomNameConstraints = {
+  static final Map<RoomNameConstraintType, RoomNameConstraint> defaultRoomNameConstraints = {
     RoomNameConstraintType.MIN_LENGTH: new RoomNameConstraint((value) {
       return value.trim().length >= 3;
     }, "Minimum room length is 3"),
     RoomNameConstraintType.ALLOWED_CHARS: new RoomNameConstraint((value) {
-      return RegExp(r"^[a-zA-Z0-9-_]+$", caseSensitive: false, multiLine: false)
-          .hasMatch(value);
+      return RegExp(r"^[a-zA-Z0-9-_]+$", caseSensitive: false, multiLine: false).hasMatch(value);
     }, "Only alphanumeric, dash, and underscore chars allowed"),
   };
 
@@ -34,9 +32,7 @@ class JitsiMeet {
   /// A JitsiMeetingListener can be attached to this meeting that will automatically
   /// be removed when the meeting has ended
   static Future<JitsiMeetingResponse> joinMeeting(JitsiMeetingOptions options,
-      {JitsiMeetingListener? listener,
-      Map<RoomNameConstraintType, RoomNameConstraint>?
-          roomNameConstraints}) async {
+      {JitsiMeetingListener? listener, Map<RoomNameConstraintType, RoomNameConstraint>? roomNameConstraints}) async {
     assert(options.room.trim().isNotEmpty, "room is empty");
 
     // If no constraints given, take default ones
@@ -49,8 +45,7 @@ class JitsiMeet {
     // (To avoid using constraint, just give an empty Map)
     if (roomNameConstraints.isNotEmpty) {
       for (RoomNameConstraint constraint in roomNameConstraints.values) {
-        assert(
-            constraint.checkConstraint(options.room), constraint.getMessage());
+        assert(constraint.checkConstraint(options.room), constraint.getMessage());
       }
     }
 
@@ -60,8 +55,7 @@ class JitsiMeet {
           "URL must be of the format <scheme>://<host>[/path], like https://someHost.com");
     }
 
-    return await JitsiMeetPlatform.instance
-        .joinMeeting(options, listener: listener);
+    return await JitsiMeetPlatform.instance.joinMeeting(options, listener: listener);
   }
 
   /// Initializes the event channel. Call when listeners are added

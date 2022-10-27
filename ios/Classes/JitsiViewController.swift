@@ -9,6 +9,8 @@ class JitsiViewController: UIViewController {
     fileprivate var jitsiMeetView: JitsiMeetView?
     
     var eventSink:FlutterEventSink? = nil
+    var id:String? = nil
+    var handle:String? = nil
     var roomName:String? = nil
     var serverUrl:URL? = nil
     var subject:String? = nil
@@ -69,6 +71,8 @@ class JitsiViewController: UIViewController {
             builder.userInfo = self.jistiMeetUserInfo
             builder.token = self.token
 
+            builder.setCall(UUID(uuidString: self.id ?? "") ?? UUID())
+            builder.setCallHandle(self.handle ?? "")
             builder.setSubject(self.subject ?? "room")
             builder.setAudioOnly(self.audioOnly ?? false)
             builder.setAudioMuted(self.audioMuted ?? false)

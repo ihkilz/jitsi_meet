@@ -82,8 +82,8 @@ public class JitsiMeetPlugin() : FlutterPlugin, MethodCallHandler, ActivityAware
      * MethodCallHandler interface implementations
      */
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
-        Log.d(JITSI_PLUGIN_TAG, "method: ${call.method}")
-        Log.d(JITSI_PLUGIN_TAG, "arguments: ${call.arguments}")
+        // Log.d(JITSI_PLUGIN_TAG, "method: ${call.method}")
+        // Log.d(JITSI_PLUGIN_TAG, "arguments: ${call.arguments}")
 
         when (call.method) {
             "joinMeeting" -> {
@@ -108,7 +108,7 @@ public class JitsiMeetPlugin() : FlutterPlugin, MethodCallHandler, ActivityAware
             return
         }
 
-        Log.d(JITSI_PLUGIN_TAG, "Joining Room: $room")
+        // Log.d(JITSI_PLUGIN_TAG, "Joining Room: $room")
 
         val userInfo = JitsiMeetUserInfo()
         userInfo.displayName = call.argument("userDisplayName")
@@ -122,7 +122,7 @@ public class JitsiMeetPlugin() : FlutterPlugin, MethodCallHandler, ActivityAware
             serverURLString = "https://meet.jit.si";
         }
         val serverURL = URL(serverURLString)
-        Log.d(JITSI_PLUGIN_TAG, "Server URL: $serverURL, $serverURLString")
+        // Log.d(JITSI_PLUGIN_TAG, "Server URL: $serverURL, $serverURLString")
 
         val optionsBuilder = JitsiMeetConferenceOptions.Builder()
 
