@@ -89,4 +89,6 @@ enum FeatureFlagEnum {
   /// Flag indicating if the welcome page should be enabled.
   /// Default: disabled (false).
   WELCOME_PAGE_ENABLED,
+
+  SETTINGS_ENABLED,
 }

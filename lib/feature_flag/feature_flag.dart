@@ -25,6 +25,7 @@ class FeatureFlag {
   bool? toolboxAlwaysVisible;
   bool? videoShareButtonEnabled;
   bool? welcomePageEnabled;
+  bool? settingsEnabled;
 
   int? get resoulution {
     return _resolution;
@@ -47,99 +48,68 @@ class FeatureFlag {
     Map<String?, dynamic> featureFlags = new HashMap();
 
     if (addPeopleEnabled != null)
-      featureFlags[FeatureFlagHelper
-          .featureFlags[FeatureFlagEnum.ADD_PEOPLE_ENABLED]] = addPeopleEnabled;
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.ADD_PEOPLE_ENABLED]] = addPeopleEnabled;
 
     if (calendarEnabled != null)
-      featureFlags[FeatureFlagHelper
-          .featureFlags[FeatureFlagEnum.CALENDAR_ENABLED]] = calendarEnabled;
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.CALENDAR_ENABLED]] = calendarEnabled;
 
     if (callIntegrationEnabled != null)
-      featureFlags[FeatureFlagHelper
-              .featureFlags[FeatureFlagEnum.CALL_INTEGRATION_ENABLED]] =
-          callIntegrationEnabled;
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.CALL_INTEGRATION_ENABLED]] = callIntegrationEnabled;
 
     if (closeCaptionsEnabled != null)
-      featureFlags[FeatureFlagHelper
-              .featureFlags[FeatureFlagEnum.CLOSE_CAPTIONS_ENABLED]] =
-          closeCaptionsEnabled;
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.CLOSE_CAPTIONS_ENABLED]] = closeCaptionsEnabled;
 
     if (conferenceTimerEnabled != null)
-      featureFlags[FeatureFlagHelper
-              .featureFlags[FeatureFlagEnum.CONFERENCE_TIMER_ENABLED]] =
-          conferenceTimerEnabled;
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.CONFERENCE_TIMER_ENABLED]] = conferenceTimerEnabled;
 
-    if (chatEnabled != null)
-      featureFlags[FeatureFlagHelper
-          .featureFlags[FeatureFlagEnum.CHAT_ENABLED]] = chatEnabled;
+    if (chatEnabled != null) featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.CHAT_ENABLED]] = chatEnabled;
 
     if (inviteEnabled != null)
-      featureFlags[FeatureFlagHelper
-          .featureFlags[FeatureFlagEnum.INVITE_ENABLED]] = inviteEnabled;
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.INVITE_ENABLED]] = inviteEnabled;
 
     if (iOSRecordingEnabled != null)
-      featureFlags[FeatureFlagHelper
-              .featureFlags[FeatureFlagEnum.IOS_RECORDING_ENABLED]] =
-          iOSRecordingEnabled;
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.IOS_RECORDING_ENABLED]] = iOSRecordingEnabled;
 
     if (kickOutEnabled != null)
-      featureFlags[FeatureFlagHelper
-          .featureFlags[FeatureFlagEnum.KICK_OUT_ENABLED]] = kickOutEnabled;
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.KICK_OUT_ENABLED]] = kickOutEnabled;
 
     if (liveStreamingEnabled != null)
-      featureFlags[FeatureFlagHelper
-              .featureFlags[FeatureFlagEnum.LIVE_STREAMING_ENABLED]] =
-          liveStreamingEnabled;
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.LIVE_STREAMING_ENABLED]] = liveStreamingEnabled;
 
     if (meetingNameEnabled != null)
-      featureFlags[FeatureFlagHelper
-              .featureFlags[FeatureFlagEnum.MEETING_NAME_ENABLED]] =
-          meetingNameEnabled;
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.MEETING_NAME_ENABLED]] = meetingNameEnabled;
 
     if (meetingPasswordEnabled != null)
-      featureFlags[FeatureFlagHelper
-              .featureFlags[FeatureFlagEnum.MEETING_PASSWORD_ENABLED]] =
-          meetingPasswordEnabled;
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.MEETING_PASSWORD_ENABLED]] = meetingPasswordEnabled;
 
-    if (pipEnabled != null)
-      featureFlags[FeatureFlagHelper
-          .featureFlags[FeatureFlagEnum.PIP_ENABLED]] = pipEnabled;
+    if (pipEnabled != null) featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.PIP_ENABLED]] = pipEnabled;
 
     if (raiseHandEnabled != null)
-      featureFlags[FeatureFlagHelper
-          .featureFlags[FeatureFlagEnum.RAISE_HAND_ENABLED]] = raiseHandEnabled;
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.RAISE_HAND_ENABLED]] = raiseHandEnabled;
 
     if (recordingEnabled != null)
-      featureFlags[FeatureFlagHelper
-          .featureFlags[FeatureFlagEnum.RECORDING_ENABLED]] = recordingEnabled;
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.RECORDING_ENABLED]] = recordingEnabled;
 
-    if (_resolution != null)
-      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.RESOLUTION]] =
-          _resolution;
+    if (_resolution != null) featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.RESOLUTION]] = _resolution;
 
     if (serverURLChangeEnabled != null)
-      featureFlags[FeatureFlagHelper
-              .featureFlags[FeatureFlagEnum.SERVER_URL_CHANGE_ENABLED]] =
-          serverURLChangeEnabled;
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.SERVER_URL_CHANGE_ENABLED]] = serverURLChangeEnabled;
 
     if (tileViewEnabled != null)
-      featureFlags[FeatureFlagHelper
-          .featureFlags[FeatureFlagEnum.TILE_VIEW_ENABLED]] = tileViewEnabled;
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.TILE_VIEW_ENABLED]] = tileViewEnabled;
 
     if (toolboxAlwaysVisible != null)
-      featureFlags[FeatureFlagHelper
-              .featureFlags[FeatureFlagEnum.TOOLBOX_ALWAYS_VISIBLE]] =
-          toolboxAlwaysVisible;
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.TOOLBOX_ALWAYS_VISIBLE]] = toolboxAlwaysVisible;
 
     if (videoShareButtonEnabled != null)
-      featureFlags[FeatureFlagHelper
-              .featureFlags[FeatureFlagEnum.VIDEO_SHARE_BUTTON_ENABLED]] =
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.VIDEO_SHARE_BUTTON_ENABLED]] =
           videoShareButtonEnabled;
 
     if (welcomePageEnabled != null)
-      featureFlags[FeatureFlagHelper
-              .featureFlags[FeatureFlagEnum.WELCOME_PAGE_ENABLED]] =
-          welcomePageEnabled;
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.WELCOME_PAGE_ENABLED]] = welcomePageEnabled;
+
+    if (settingsEnabled != null)
+      featureFlags[FeatureFlagHelper.featureFlags[FeatureFlagEnum.SETTINGS_ENABLED]] = settingsEnabled;
 
     return featureFlags;
   }
